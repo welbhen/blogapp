@@ -95,7 +95,7 @@ const db = require('./config/db');
  		app.use(bodyParser.json());
  	// Mongoose:
  		mongoose.Promise = global.Promise;
-		mongoose.connect('mongodb+srv://user:user@cluster0.kruav.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+		mongoose.connect(db.mongoURI, {
 			useNewUrlParser:true,
 		    useUnifiedTopology: true
 		}).then(() => {
@@ -117,7 +117,7 @@ const db = require('./config/db');
 		Post.find().lean().populate('category').sort({
 			date: 'desc'
 		}).then((posts) => {
-			res.render('./index', {
+			res.render('index', {
 				posts: posts
 			});
 		}).catch((err) => {
@@ -204,9 +204,9 @@ const db = require('./config/db');
 	});
 
 // Starting the server:
-// const PORT = process.env.PORT || 8081;
-
-app.listen("https://blogapp-study.netlify.app", () => {
+const PORT = process.env.PORT || 8081;
+app.listen(PORT, () => {
 	// console.log("Server opened! Use: http://localhost:" + PORT);
-	console.log("Server opened!");
+	console.log("Env: " + process.env.NODE_ENV);
+	console.log("Server opened! PORT: " + PORT);
 });
