@@ -95,7 +95,7 @@ const db = require('./config/db');
  		app.use(bodyParser.json());
  	// Mongoose:
  		mongoose.Promise = global.Promise;
-		mongoose.connect(db.mongoURI, {
+		mongoose.connect('mongodb+srv://user:user@cluster0.kruav.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
 			useNewUrlParser:true,
 		    useUnifiedTopology: true
 		}).then(() => {
@@ -117,7 +117,7 @@ const db = require('./config/db');
 		Post.find().lean().populate('category').sort({
 			date: 'desc'
 		}).then((posts) => {
-			res.render('index', {
+			res.render('./index', {
 				posts: posts
 			});
 		}).catch((err) => {
