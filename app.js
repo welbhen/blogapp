@@ -204,7 +204,8 @@ const db = require('./config/db');
 	});
 
 // Starting the server:
-const PORT = process.env.PORT || 8081;
+//const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
 	console.log("Server opened! Use: http://localhost:" + PORT);
 });
