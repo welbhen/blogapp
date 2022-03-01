@@ -95,7 +95,7 @@ const db = require('./config/db');
  		app.use(bodyParser.json());
  	// Mongoose:
  		mongoose.Promise = global.Promise;
-		mongoose.connect('mongodb+srv://user:user@cluster0.kruav.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+		mongoose.connect(process.env.MONGO_URI, {
 			useNewUrlParser:true,
 		    useUnifiedTopology: true
 		}).then(() => {
@@ -204,8 +204,8 @@ const db = require('./config/db');
 	});
 
 // Starting the server:
-//const PORT = process.env.PORT || 8081;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8081;
+
 app.listen(PORT, () => {
 	console.log("Server opened! Use: http://localhost:" + PORT);
 });
