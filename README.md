@@ -5,6 +5,7 @@
 
 This is a Full Stack app!
 For that reason the GitHub page doens't really work.
+
 -- Currently working on a deployment outside GitHub --
 
 ```
