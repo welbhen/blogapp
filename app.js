@@ -75,7 +75,9 @@ const db = require('./config/db');
 			runtimeOptions: {
       				allowProtoPropertiesByDefault: true,
        				allowProtoMethodsByDefault: false,
-       		}
+       		},
+			partialsDir: path.join(__dirname, 'views/partials'),
+			layoutsDir: path.join(__dirname, 'views/layouts')
 		}));
 		app.set('view engine', 'handlebars');
 		app.set('views', path.join(__dirname, 'views'));
