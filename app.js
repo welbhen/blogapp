@@ -74,21 +74,10 @@ const db = require('./config/db');
 			runtimeOptions: {
       				allowProtoPropertiesByDefault: true,
        				allowProtoMethodsByDefault: false,
-       		},
-       		/*
-       		helpers: {
-				ifCond: (v1, operator, v2, options) => {
-					switch (operator) {
-		       			case '==':
-		       				return (v1 == v2);
-		       			default:
-		          			return options.inverse(this);
-		 		    }
-				}
-			}
-			*/
+       		}
 		}));
 		app.set('view engine', 'handlebars');
+		app.set('views', path.join(__dirname, 'views'));
 		 		
  	// Body-Parser:
  		app.use(bodyParser.urlencoded({extended: false}));
