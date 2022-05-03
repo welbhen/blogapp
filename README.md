@@ -4,9 +4,6 @@
 ## ALL CREDITS TO: [Victor Lima - Guia do Programador](https://www.youtube.com/c/GuiadoProgramador)
 
 This is a Full Stack app!
-For that reason the GitHub page doesn't really work.
-
--- Currently working on a deployment outside GitHub --
 
 ```
 I'm using:
